@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git 'https://github.com/Robin-Instructor/CI-CD-demo.git'
+                git clone 'https://github.com/Robin-Instructor/CI-CD-demo.git'
             }
         }
         stage('Build Docker image') {
