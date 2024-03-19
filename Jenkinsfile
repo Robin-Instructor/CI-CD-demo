@@ -8,12 +8,7 @@ pipeline {
     }
     
     stages {
-        stage('Clone repository') {
-            steps {
-                git clone https://github.com/Robin-Instructor/CI-CD-demo.git
-            }
-        }
-        stage('Build Docker image') {
+          stage('Build Docker image') {
             steps {
                 script {
                     docker.build("${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${ECR_REPO_NAME}:latest")
